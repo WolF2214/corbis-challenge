@@ -1,4 +1,4 @@
-# Stock Manager Django
+# Stock Manager ( Corvis Challenge) 
 
 This project was bootstrapped with [Django](https://www.djangoproject.com/)
 
