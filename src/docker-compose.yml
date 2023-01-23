@@ -6,14 +6,13 @@ services:
     ports:
       - '3306:3306'
     environment:
-       MYSQL_DATABASE: 'stock_db'
+       MYSQL_DATABASE: 'my-app-db'
        MYSQL_USER: 'root'
-       MYSQL_PASSWORD: '(y[]XK1xJo5,)%^'
-       MYSQL_HOST: '127.0.0.1'
-       MYSQL_PORT: '3306'
+       MYSQL_PASSWORD: 'password'
+       MYSQL_ROOT_PASSWORD: 'password'
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/my_app_dir
     ports:
