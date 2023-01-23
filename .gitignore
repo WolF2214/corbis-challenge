@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 # Virtual Environment
-myVenv
+poetry.lock
+pyproject.toml
+stock_db.sql
