@@ -9,6 +9,9 @@ packages = [{include = "corvis_challenge"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.1.5"
+mysqlclient = "^2.1.1"
+django-mysql = "^4.8.0"
+django-environ = "^0.9.0"
 
 [build-system]
 requires = ["poetry-core"]
