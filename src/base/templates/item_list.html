@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} Items: Listado {% endblock %}    
+
+{% block content %}
+    </div>
+    <div class="col col-sm-12 col-lg-8"></div>
+        <a href="{% url 'item-create' %}">Item Nuevo</a>
+    </div>
+    <br>
+    <br>
+    <div>  
+        <form method="GET">
+            <input type='text' name='search-area' value="{{search_input}}">
+            <input type="submit" value='Filter'>
+        </form>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col col-sm-12 col-lg-8">
+        <table class="table table-success table-striped">
+            <thead>
+                <th class="title">Codigo</th>
+                <th id='title1'>Nombre Item</th> 
+                <th class="title">Precio Unitario</th>
+                <th class="title">Cantidad en Stock</th>
+                <th></th>
+                <th></th>
+            </thead>
+            <body>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.code}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td><a href="{% url 'item-update' item.id %}">Editar</a></td>
+                    <td><a href="{% url 'item-delete' item.id %}">Borrar</a></td>
+                </tr>
+                {% empty %}
+                <h3>No hay items en la lista</h3>
+                {% endfor %}
+            </body>
+        </table>
+</div>
+
+<br>
+
+{% endblock %}
+  

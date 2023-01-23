@@ -1,0 +1,7 @@
+
+<a href="{% url 'items' %}">Return</a>
+<form method="POST">
+    {% csrf_token %}
+    <p>Estas seguro de borrar este item ?</p>
+    <input type="submit"value="Delete"/>
+</form>
