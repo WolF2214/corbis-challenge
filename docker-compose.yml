@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+    app:
+        image: django_test:latest
+        container_name: django_test
+        restart: always
+        ports:
+        - "8000:8000"
+    mysql:
+        image: mysql:8
+        volumes:
+        - /mysql_data/:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: 'stock_db'
+            MYSQL_PASSWORD: '12345678'
+            MYSQL_ROOT_PASSWORD: '12345Corvis'
+            MYSQL_USER: 'corvis'
+        ports:
+            - "3306:3306"

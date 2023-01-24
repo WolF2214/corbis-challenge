@@ -2,7 +2,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.views.generic.list import ListView
@@ -39,8 +39,8 @@ class ItemList(LoginRequiredMixin, ListView):
     context_object_name = 'items'
     template_name = 'item_list.html'
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data( *args, **kwargs)
         context['item'] = context['items'].filter(user=self.request.user)
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
@@ -50,7 +50,7 @@ class ItemList(LoginRequiredMixin, ListView):
 
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
-    fields = ['code', 'name', 'tipe', 'price', 'quantity']
+    fields = ['code', 'name', 'type', 'price', 'quantity']
     success_url = reverse_lazy('items')
     template_name = 'item_form.html'
 
@@ -60,7 +60,7 @@ class ItemCreate(LoginRequiredMixin, CreateView):
 
 class ItemUpdate(LoginRequiredMixin, UpdateView):
     model = Item
-    fields = ['code', 'name', 'tipe', 'price', 'quantity']
+    fields = ['code', 'name', 'type', 'price', 'quantity']
     success_url = reverse_lazy('items')
     template_name = 'item_form.html'
     
