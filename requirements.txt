@@ -2,5 +2,3 @@ Django==4.1.5
 mysqlclient==2.1.1
 django-mysql==2.2.0
 django-environ==0.9.0
-pythes==7.2.1
-pytest-django==4.5.2
