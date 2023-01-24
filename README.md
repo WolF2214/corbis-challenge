@@ -42,8 +42,6 @@ poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 ## Running the project locally
 
-In VSC right click on main.py and press Run Python File in Terminal
-
 ### Install Docker ( for Windows follow  [this guide.](https://docs.docker.com/desktop/windows/install/))
 
 ```sh
