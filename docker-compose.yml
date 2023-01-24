@@ -10,7 +10,7 @@ services:
     mysql:
         image: mysql:8
         volumes:
-        - ./src/db/:/var/lib/mysql
+        - /mysql_data/:/var/lib/mysql
         environment:
             MYSQL_DATABASE: 'stock_db'
             MYSQL_PASSWORD: '12345678'
