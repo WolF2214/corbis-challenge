@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
     app:
-        image: django_test:latest
+        image: wolf2214/django_test:v1
         container_name: django_test
         restart: always
         ports:
